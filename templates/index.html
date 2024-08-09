@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Book Your Tickets</h1>
+<form method="POST" action="/submit">
+    <label for="event_type">Event Type:</label>
+    <select id="event_type" name="event_type">
+        <option value="">Select Event Type</option>
+        {% for event in events %}
+        <option value="{{ event }}">{{ event }}</option>
+        {% endfor %}
+    </select>
+
+    <div id="ticket_options" style="margin-top: 20px;">
+        <!-- Dynamic checkboxes will be inserted here -->
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
